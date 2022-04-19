@@ -483,11 +483,14 @@ input {
      ========================================================================== */
 
 .card {
-    overflow: hidden;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    background: #fff;
+    /* overflow: hidden; */
+    /* -webkit-border-radius: 3px; */
+    /* -moz-border-radius: 3px; */
+    /* border-radius: 3px; */
+    /* background: #fff; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-1 {
