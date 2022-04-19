@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta name="description" content="Colorlib Templates" />
     <meta name="author" content="Colorlib" />
     <meta name="keywords" content="Colorlib Templates" />
@@ -13,122 +15,381 @@
     <title>Predict Crop Production</title>
 
     <!-- Icons font CSS-->
-    <link href="static/CropAPP/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all" />
-    <link href="static/CropAPP/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all" />
+    <link
+      href="static/CropAPP/vendor/mdi-font/css/material-design-iconic-font.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="static/CropAPP/vendor/font-awesome-4.7/css/font-awesome.min.css"
+      rel="stylesheet"
+      media="all"
+    />
     <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+      rel="stylesheet"
+    />
 
     <!-- Vendor CSS-->
-    <link href="static/CropAPP/vendor/select2/select2.min.css" rel="stylesheet" media="all" />
-    <link href="static/CropAPP/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all" />
+    <link
+      href="static/CropAPP/vendor/select2/select2.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="static/CropAPP/vendor/datepicker/daterangepicker.css"
+      rel="stylesheet"
+      media="all"
+    />
 
     <!-- Main CSS-->
-    <link href="static/CropAPP/css/main.css" rel="stylesheet" media="all" />
-</head>
+    <!-- <link href="static/CropAPP/css/main.css" rel="stylesheet" media="all" /> -->
+    <style type="text/css" media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", "Fira Code", monospace;
+        box-sizing: border-box;
+        /*font-weight: bold;*/
+      }
+      :root {
+        --global-gradient: linear-gradient(to top right, #6dd5fa, #ffffff);
+        --white-gradient: linear-gradient(
+          to right bottom,
+          rgba(255, 255, 255, 0.7),
+          rgba(255, 255, 255, 0.3)
+        );
+        --white-gradient2: linear-gradient(
+          to left top,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.5)
+        );
+      }
+      main {
+        min-height: 100vh;
+        background: #2980b9; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to left,
+          #ffffff,
+          #6dd5fa,
+          #2980b9
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to left,
+          #ffffff,
+          #6dd5fa,
+          #2980b9
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding-top: 5vh;
+      }
+      .card-1 {
+        margin: 0 25vw;
+        background: var(--white-gradient);
+        min-height: 60vh;
+        border-radius: 2rem;
+        z-index: 2;
+        backdrop-filter: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .card-heading {
+        margin: 5% 0 0 0;
+      }
+      .card-body {
+        padding: 0;
+        width: 25vw;
+      }
+      .form-style-1 {
+        max-width: 100%;
+        padding: 20px 12px 10px 20px;
+        font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      }
+      .form-style-1 li {
+        padding: 0;
+        display: block;
+        list-style: none;
+        margin: 10px 0 0 0;
+      }
+      .form-style-1 label {
+        margin: 0 0 3px 0;
+        padding: 0px;
+        display: block;
+        font-weight: bold;
+      }
+      .form-style-1 input[type="text"],
+      .form-style-1 input[type="date"],
+      .form-style-1 input[type="datetime"],
+      .form-style-1 input[type="number"],
+      .form-style-1 input[type="search"],
+      .form-style-1 input[type="time"],
+      .form-style-1 input[type="url"],
+      .form-style-1 input[type="email"],
+      textarea,
+      select {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        border: 1px solid #bebebe;
+        padding: 7px;
+        margin: 0px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        outline: none;
+      }
+      .form-style-1 input[type="text"]:focus,
+      .form-style-1 input[type="date"]:focus,
+      .form-style-1 input[type="datetime"]:focus,
+      .form-style-1 input[type="number"]:focus,
+      .form-style-1 input[type="search"]:focus,
+      .form-style-1 input[type="time"]:focus,
+      .form-style-1 input[type="url"]:focus,
+      .form-style-1 input[type="email"]:focus,
+      .form-style-1 textarea:focus,
+      .form-style-1 select:focus {
+        -moz-box-shadow: 0 0 8px #88d5e9;
+        -webkit-box-shadow: 0 0 8px #88d5e9;
+        box-shadow: 0 0 8px #88d5e9;
+        border: 1px solid #88d5e9;
+      }
+      .form-style-1 .field-divided {
+        width: 49%;
+      }
 
-<body>
-    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-1">
-                <div class="card-heading"></div>
-                <div class="card-body">
-                    <h2 class="title">Please Enter the following details</h2>
-                    <form method="POST">
-                        <div class="input-group">
+      .form-style-1 .field-long {
+        width: 100%;
+      }
+      .form-style-1 .field-select {
+        width: 100%;
+      }
+      .form-style-1 .field-textarea {
+        height: 100px;
+      }
+      .form-style-1 input[type="submit"],
+      .form-style-1 input[type="button"] {
+        background: #4b99ad;
+        padding: 8px 15px 8px 15px;
+        border: none;
+        color: #fff;
+      }
+      .form-style-1 input[type="submit"]:hover,
+      .form-style-1 input[type="button"]:hover {
+        background: #4691a4;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+      }
+      .button-center {
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5%;
+      }
+      .form-style-1 .required {
+        color: red;
+      }
+      select {
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
 
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <label for="country-state ">Enter your State</label>
-                                <select name="country-state">
-                    
-    <option value=" AN ">Andaman and Nicobar Islands</option>
-    <option value="AP ">Andhra Pradesh</option>
-    <option value="AR ">Arunachal Pradesh</option>
-    <option value="AS ">Assam</option>
-    <option value="BR ">Bihar</option>
-    <option value="CH ">Chandigarh</option>
-    <option value="CT ">Chhattisgarh</option>
-    <option value="DN ">Dadra and Nagar Haveli</option>
-    <option value="DD ">Daman and Diu</option>
-    <option value="DL ">Delhi</option>
-    <option value="GA ">Goa</option>
-    <option value="GJ ">Gujarat</option>
-    <option value="HR ">Haryana</option>
-    <option value="HP ">Himachal Pradesh</option>
-    <option value="JK ">Jammu and Kashmir</option>
-    <option value="JH ">Jharkhand</option>
-    <option value="KA ">Karnataka</option>
-    <option value="KL ">Kerala</option>
-    <option value="LA ">Ladakh</option>
-    <option value="LD ">Lakshadweep</option>
-    <option value="MP ">Madhya Pradesh</option>
-    <option value="MH ">Maharashtra</option>
-    <option value="MN ">Manipur</option>
-    <option value="ML ">Meghalaya</option>
-    <option value="MZ ">Mizoram</option>
-    <option value="NL ">Nagaland</option>
-    <option value="OR ">Odisha</option>
-    <option value="PY ">Puducherry</option>
-    <option value="PB ">Punjab</option>
-    <option value="RJ ">Rajasthan</option>
-    <option value="SK ">Sikkim</option>
-    <option value="TN ">Tamil Nadu</option>
-    <option value="TG ">Telangana</option>
-    <option value="TR ">Tripura</option>
-    <option value="UP ">Uttar Pradesh</option>
-    <option value="UT ">Uttarakhand</option>
-    <option value="WB ">West Bengal</option>
-                  </select>
-                                <div class="select-dropdown "></div>
-                            </div>
-                        </div>
-                        <div class="row row-space ">
-                            <div class="col-2 ">
-                                <div class="input-group ">
-
-                                    <label for="crop-area">Enter Area</label>
-
-                                    <div class="row row-space">
-                                        <input class="input--style-1" type="number " step="any " required placeholder="Area " name="crop-area " />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2 ">
-                                <div class="input-group ">
-                                    <div class="rs-select2 js-select-simple select--no-search ">
-                                        <label for="crop-season ">Enter Season</label>
-
-                                        <select name="crop-season ">
-                        <option disabled="disabled " selected="selected ">
-                          Season
-                        </option>
-                        <option value="kharif ">Kharif</option>
-                        <option value="rabi ">Rabi</option>
-                        <option value="whole_year ">Whole Year</option>
-                        <option value="summer ">Summer</option>
-                      </select>
-                                        <div class="select-dropdown "></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="input-group ">
-                                <label for="crop">Enter Crop Name</label>
-                                <input class="input--style-1" type="text " required placeholder="Crop Name " name="crop " />
-
-                            </div>
-                        </div>
-
-
-                        <div class="p-t-20 ">
-                            <button class="btn btn--radius btn--green " type="submit ">
-                  Submit
-                </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+  <body>
+    <main>
+      <div class="card card-1">
+        <div class="card-heading">
+          <h2 class="title">Please Enter the following details</h2>
+          <br />
+          <hr style="width: 100%; background-color: #000000; color: #000000" />
         </div>
-    </div>
+        <div class="card-body">
+          <form method="POST">
+            <!-- <div class="input-group"> -->
+            <!--   <div class="rs-select2 js-select-simple select--no-search"> -->
+            <!--     <label for="country-state ">Enter your State</label> -->
+            <!--     <select name="country-state"> -->
+            <!--       <option value=" AN ">Andaman and Nicobar Islands</option> -->
+            <!--       <option value="AP ">Andhra Pradesh</option> -->
+            <!--       <option value="AR ">Arunachal Pradesh</option> -->
+            <!--       <option value="AS ">Assam</option> -->
+            <!--       <option value="BR ">Bihar</option> -->
+            <!--       <option value="CH ">Chandigarh</option> -->
+            <!--       <option value="CT ">Chhattisgarh</option> -->
+            <!--       <option value="DN ">Dadra and Nagar Haveli</option> -->
+            <!--       <option value="DD ">Daman and Diu</option> -->
+            <!--       <option value="DL ">Delhi</option> -->
+            <!--       <option value="GA ">Goa</option> -->
+            <!--       <option value="GJ ">Gujarat</option> -->
+            <!--       <option value="HR ">Haryana</option> -->
+            <!--       <option value="HP ">Himachal Pradesh</option> -->
+            <!--       <option value="JK ">Jammu and Kashmir</option> -->
+            <!--       <option value="JH ">Jharkhand</option> -->
+            <!--       <option value="KA ">Karnataka</option> -->
+            <!--       <option value="KL ">Kerala</option> -->
+            <!--       <option value="LA ">Ladakh</option> -->
+            <!--       <option value="LD ">Lakshadweep</option> -->
+            <!--       <option value="MP ">Madhya Pradesh</option> -->
+            <!--       <option value="MH ">Maharashtra</option> -->
+            <!--       <option value="MN ">Manipur</option> -->
+            <!--       <option value="ML ">Meghalaya</option> -->
+            <!--       <option value="MZ ">Mizoram</option> -->
+            <!--       <option value="NL ">Nagaland</option> -->
+            <!--       <option value="OR ">Odisha</option> -->
+            <!--       <option value="PY ">Puducherry</option> -->
+            <!--       <option value="PB ">Punjab</option> -->
+            <!--       <option value="RJ ">Rajasthan</option> -->
+            <!--       <option value="SK ">Sikkim</option> -->
+            <!--       <option value="TN ">Tamil Nadu</option> -->
+            <!--       <option value="TG ">Telangana</option> -->
+            <!--       <option value="TR ">Tripura</option> -->
+            <!--       <option value="UP ">Uttar Pradesh</option> -->
+            <!--       <option value="UT ">Uttarakhand</option> -->
+            <!--       <option value="WB ">West Bengal</option> -->
+            <!--     </select> -->
+            <!--     <div class="select-dropdown"></div> -->
+            <!--   </div> -->
+            <!-- </div> -->
+            <!-- <div class="row row-space"> -->
+            <!--   <div class="col-2"> -->
+            <!--     <div class="input-group"> -->
+            <!--       <label for="crop-area">Enter Area</label> -->
+
+            <!--       <div class="row row-space"> -->
+            <!--         <input -->
+            <!--           class="input--style-1" -->
+            <!--           type="number " -->
+            <!--           step="any " -->
+            <!--           required -->
+            <!--           placeholder="Area " -->
+            <!--           name="crop-area " -->
+            <!--         /> -->
+            <!--       </div> -->
+            <!--     </div> -->
+            <!--   </div> -->
+            <!--   <div class="col-2"> -->
+            <!--     <div class="input-group"> -->
+            <!--       <div class="rs-select2 js-select-simple select--no-search"> -->
+            <!--         <label for="crop-season ">Enter Season</label> -->
+
+            <!--         <select name="crop-season "> -->
+            <!--           <option disabled="disabled " selected="selected "> -->
+            <!--             Season -->
+            <!--           </option> -->
+            <!--           <option value="kharif ">Kharif</option> -->
+            <!--           <option value="rabi ">Rabi</option> -->
+            <!--           <option value="whole_year ">Whole Year</option> -->
+            <!--           <option value="summer ">Summer</option> -->
+            <!--         </select> -->
+            <!--         <div class="select-dropdown"></div> -->
+            <!--       </div> -->
+            <!--     </div> -->
+            <!--   </div> -->
+            <!--   <div class="input-group"> -->
+            <!--     <label for="crop">Enter Crop Name</label> -->
+            <!--     <input -->
+            <!--       class="input--style-1" -->
+            <!--       type="text " -->
+            <!--       required -->
+            <!--       placeholder="Crop Name " -->
+            <!--       name="crop " -->
+            <!--     /> -->
+            <!--   </div> -->
+            <!-- </div> -->
+            <!-- <div class="p-t-20"> -->
+            <!--   <input type="submit" value="Submit" name="" id="" /> -->
+            <!-- </div> -->
+            <ul class="form-style-1">
+              <li>
+                <label>Enter your State <span class="required">*</span></label>
+                <select name="field4" class="field-select">
+                  <option value=" AN ">Andaman and Nicobar Islands</option>
+                  <option value="AP ">Andhra Pradesh</option>
+                  <option value="AR ">Arunachal Pradesh</option>
+                  <option value="AS ">Assam</option>
+                  <option value="BR ">Bihar</option>
+                  <option value="CH ">Chandigarh</option>
+                  <option value="CT ">Chhattisgarh</option>
+                  <option value="DN ">Dadra and Nagar Haveli</option>
+                  <option value="DD ">Daman and Diu</option>
+                  <option value="DL ">Delhi</option>
+                  <option value="GA ">Goa</option>
+                  <option value="GJ ">Gujarat</option>
+                  <option value="HR ">Haryana</option>
+                  <option value="HP ">Himachal Pradesh</option>
+                  <option value="JK ">Jammu and Kashmir</option>
+                  <option value="JH ">Jharkhand</option>
+                  <option value="KA ">Karnataka</option>
+                  <option value="KL ">Kerala</option>
+                  <option value="LA ">Ladakh</option>
+                  <option value="LD ">Lakshadweep</option>
+                  <option value="MP ">Madhya Pradesh</option>
+                  <option value="MH ">Maharashtra</option>
+                  <option value="MN ">Manipur</option>
+                  <option value="ML ">Meghalaya</option>
+                  <option value="MZ ">Mizoram</option>
+                  <option value="NL ">Nagaland</option>
+                  <option value="OR ">Odisha</option>
+                  <option value="PY ">Puducherry</option>
+                  <option value="PB ">Punjab</option>
+                  <option value="RJ ">Rajasthan</option>
+                  <option value="SK ">Sikkim</option>
+                  <option value="TN ">Tamil Nadu</option>
+                  <option value="TG ">Telangana</option>
+                  <option value="TR ">Tripura</option>
+                  <option value="UP ">Uttar Pradesh</option>
+                  <option value="UT ">Uttarakhand</option>
+                  <option value="WB ">West Bengal</option>
+                </select>
+                <!-- <label>Full Name <span class="required">*</span></label -->
+                <!-- ><input -->
+                <!--   type="text" -->
+                <!--   name="field1" -->
+                <!--   class="field-divided" -->
+                <!--   placeholder="First" -->
+                <!-- /> -->
+                <!-- <input -->
+                <!--   type="text" -->
+                <!--   name="field2" -->
+                <!--   class="field-divided" -->
+                <!--   placeholder="Last" -->
+                <!-- /> -->
+              </li>
+              <li>
+                <label>Enter Area <span class="required">*</span></label>
+                <input type="number" class="field-long" />
+              </li>
+              <!-- <li> -->
+              <!--   <label>Email <span class="required">*</span></label> -->
+              <!--   <input type="email" name="field3" class="field-long" /> -->
+              <!-- </li> -->
+              <li>
+                <label>Enter Season <span class="required">*</span></label>
+                <select name="field4" class="field-select">
+                  <option value="kharif ">Kharif</option>
+                  <option value="rabi ">Rabi</option>
+                  <option value="whole_year ">Whole Year</option>
+                  <option value="summer ">Summer</option>
+                </select>
+              </li>
+              <li>
+                <label>Enter Crop Name<span class="required">*</span></label>
+                <input type="text" class="field-long" />
+              </li>
+              <li>
+                <div class="button-center">
+                  <input type="submit" value="Submit" />
+                </div>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </main>
 
     <!-- Jquery JS-->
     <script src="static/CropAPP/vendor/jquery/jquery.min.js "></script>
@@ -139,8 +400,8 @@
 
     <!-- Main JS-->
     <script src="static/CropAPP/js/global.js "></script>
-</body>
-<!-- This templates was made by Colorlib (https://colorlib.com) -->
-
+  </body>
+  <!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
 <!-- end document-->
+
