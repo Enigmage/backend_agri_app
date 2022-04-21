@@ -89,7 +89,7 @@
         min-height: 60vh;
         border-radius: 2rem;
         z-index: 2;
-        backdrop-filter: none;
+        backdrop-filter: blur(1rem);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -306,7 +306,7 @@
             <ul class="form-style-1">
               <li>
                 <label>Enter your State <span class="required">*</span></label>
-                <select name="field4" class="field-select">
+                <select name="field4" class="field-select" required>
                   <option value=" AN ">Andaman and Nicobar Islands</option>
                   <option value="AP ">Andhra Pradesh</option>
                   <option value="AR ">Arunachal Pradesh</option>
@@ -361,7 +361,7 @@
               </li>
               <li>
                 <label>Enter Area <span class="required">*</span></label>
-                <input type="number" class="field-long" />
+                <input type="number" class="field-long" required/>
               </li>
               <!-- <li> -->
               <!--   <label>Email <span class="required">*</span></label> -->
@@ -369,7 +369,7 @@
               <!-- </li> -->
               <li>
                 <label>Enter Season <span class="required">*</span></label>
-                <select name="field4" class="field-select">
+                <select name="field4" class="field-select" required>
                   <option value="kharif ">Kharif</option>
                   <option value="rabi ">Rabi</option>
                   <option value="whole_year ">Whole Year</option>
@@ -378,7 +378,7 @@
               </li>
               <li>
                 <label>Enter Crop Name<span class="required">*</span></label>
-                <input type="text" class="field-long" />
+                <input type="text" class="field-long" / required>
               </li>
               <li>
                 <div class="button-center">
